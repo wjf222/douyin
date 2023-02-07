@@ -15,6 +15,6 @@ CREATE Table IF NOT EXISTS Relation(
     id int AUTO_INCREMENT PRIMARY KEY,
     from_user int,
     to_user int,
-    create_time timestamp,
+    create_at timestamp,
     UNIQUE KEY `follow`(`from_user`,`to_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
