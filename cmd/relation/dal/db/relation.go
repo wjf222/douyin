@@ -8,15 +8,15 @@ import (
 
 type Relation struct {
 	gorm.Model
-	fromUser int64 `json:from_user`
-	toUSer   int64 `json:to_user`
+	FromUser int64 `json:from_user`
+	ToUSer   int64 `json:to_user`
 }
 
 func (r *Relation) TableName() string {
 	return constants.FollowTableName
 }
 
-func CreateRelation(ctx context.Context, relations []*Relation) error {
+func CreateRelation(ctx context.Context, relations *Relation) error {
 	return DB.WithContext(ctx).Create(relations).Error
 }
 
